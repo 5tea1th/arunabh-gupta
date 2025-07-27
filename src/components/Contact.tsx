@@ -43,8 +43,8 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/arunabhgupta123",
-      href: "https://linkedin.com/in/arunabhgupta123",
+      value: "linkedin.com/in/arunabh-s-gupta/",
+      href: "https://linkedin.com/in/arunabh-s-gupta/",
       color: "text-accent"
     },
     {
