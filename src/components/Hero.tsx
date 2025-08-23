@@ -54,7 +54,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               className="btn-tech text-base px-8 py-3 min-w-[160px]"
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => window.open('/Resume.pdf', '_blank')}
             >
               <Download className="mr-2 h-4 w-4" />
               View Resume
