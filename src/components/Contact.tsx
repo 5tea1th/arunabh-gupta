@@ -26,6 +26,7 @@ const Contact = () => {
         'service_y20wmlx',
         'template_0bfhbkh',
         {
+          to_name: 'Arunabh',
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
