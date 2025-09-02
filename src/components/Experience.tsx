@@ -10,9 +10,33 @@ const Experience = () => {
       location: "Remote",
       period: "Summer 2025",
       type: "Internship",
-      description: "Worked on integrating and testing ML-based perception models on custom robotic hardware using ROS. Contributed to advancing autonomous systems and gained hands-on experience with robotics software stack.",
-      technologies: ["ROS", "Machine Learning", "Python", "Computer Vision", "Robotics"],
-      current: false
+      description:
+        "Worked on integrating and testing ML-based perception models on custom robotic hardware using ROS. Contributed to advancing autonomous systems and gained hands-on experience with robotics software stack.",
+      technologies: [
+        "ROS",
+        "Machine Learning",
+        "Python",
+        "Computer Vision",
+        "Robotics",
+      ],
+      current: false,
+    },
+    {
+      title: "Projects Lead",
+      company: "RoboVITics",
+      location: "VIT Vellore",
+      period: "2024 - Present",
+      type: "Leadership",
+      description:
+        "Leading and managing multiple technical projects within RoboVITics, coordinating with sub-teams, and ensuring timely delivery of robotics initiatives. Oversee project planning, execution, and innovation strategy.",
+      technologies: [
+        "Project Leadership",
+        "Robotics",
+        "Team Management",
+        "Strategic Planning",
+        "Innovation",
+      ],
+      current: true,
     },
     {
       title: "App Development Head",
@@ -20,17 +44,26 @@ const Experience = () => {
       location: "VIT Vellore",
       period: "2024 - Present",
       type: "Leadership",
-      description: "Leading the club's mobile app development efforts, mentoring junior developers, and coordinating technical projects. Responsible for driving innovation in mobile solutions for robotics applications.",
-      technologies: ["Flutter", "Team Leadership", "Project Management", "Mobile Development", "Mentoring"],
-      current: true
-    }
+      description:
+        "Leading the club's mobile app development efforts, mentoring junior developers, and coordinating technical projects. Responsible for driving innovation in mobile solutions for robotics applications.",
+      technologies: [
+        "Flutter",
+        "Team Leadership",
+        "Project Management",
+        "Mobile Development",
+        "Mentoring",
+      ],
+      current: true,
+    },
   ];
 
   return (
     <section id="experience" className="py-20 px-4 bg-muted/20">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            Experience
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Building expertise through hands-on projects and leadership roles
           </p>
@@ -42,10 +75,12 @@ const Experience = () => {
               <Card key={index} className="project-card relative">
                 {exp.current && (
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-accent text-accent-foreground text-xs">Current</Badge>
+                    <Badge className="bg-accent text-accent-foreground text-xs">
+                      Current
+                    </Badge>
                   </div>
                 )}
-                
+
                 <div className="flex flex-col md:flex-row gap-6">
                   {/* Timeline indicator */}
                   <div className="flex flex-col items-center md:items-start">
@@ -59,8 +94,12 @@ const Experience = () => {
                   <div className="flex-1">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
-                        <h4 className="text-lg text-primary font-medium">{exp.company}</h4>
+                        <h3 className="text-xl font-semibold text-foreground">
+                          {exp.title}
+                        </h3>
+                        <h4 className="text-lg text-primary font-medium">
+                          {exp.company}
+                        </h4>
                       </div>
                       <div className="flex flex-col md:items-end text-sm text-muted-foreground mt-2 md:mt-0">
                         <div className="flex items-center gap-1">
@@ -96,8 +135,12 @@ const Experience = () => {
             <p className="text-muted-foreground mb-4">
               Interested in working together?
             </p>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
               className="text-primary hover:text-accent transition-colors duration-300 font-medium"
             >
               Let's connect →

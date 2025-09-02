@@ -6,7 +6,7 @@ import { ExternalLink, Github, Smartphone, Brain } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "Cownnect",
+      title: "Cowwnect",
       description: "An AI-powered mobile application for detecting Indian cow breeds using advanced machine learning. Features real-time breed identification, detailed breed information, and integration with Gemini API for intelligent responses.",
       longDescription: "Cownnect combines computer vision and natural language processing to create a comprehensive solution for livestock identification. The app uses a custom-trained TensorFlow Lite model optimized for mobile deployment, ensuring fast and accurate breed detection even in offline scenarios.",
       technologies: ["Flutter", "TensorFlow Lite", "Gemini API", "Dart", "Computer Vision", "Mobile ML"],
@@ -22,18 +22,82 @@ const Projects = () => {
       ],
       metrics: {
         accuracy: "92%",
-        breeds: "25+",
+        breeds: "Indian",
         platforms: "iOS & Android"
-      }
+      },
+      links: {
+      github: "https://github.com/5tea1th/cowwnect"
+    }
+    },
+    {
+      title: "RoboWars App",
+      description: "A live mobile app built for robotics competitions, currently available on the Play Store in beta testing. Features include live match tracking, instant updates, and media gallery.",
+      longDescription: "RoboWars App empowers robotics enthusiasts and participants with real-time competition updates. Built using Flutter and Firestore, the app supports push notifications, match schedules, live scoring, and galleries for highlights, making robotics events more engaging and accessible.",
+      technologies: ["Flutter", "Firestore Database", "Cloud", "Mobile"],
+      category: "Mobile App",
+      icon: Smartphone,
+      status: "Live (Beta Testing)",
+      features: [
+        "Live match updates",
+        "Match tracking",
+        "Push notifications",
+        "Media gallery",
+        "Realtime database sync"
+      ],
+      metrics: {
+        matches: "50+",
+        users: "Beta testers",
+        platforms: "Android"
+      },
+      links: {
+      playstore: "https://play.google.com/store/apps/details?id=robowars.com.robowars_app",
+      github: "https://github.com/5tea1th/RoboVITics_Robowars_2025"
+    }
+    },
+    {
+      title: "Artisan Platform",
+      description:
+        "Mobile-first platform that empowers local artisans with digital storefronts, KYC onboarding, product management and AI-powered short reels to showcase products.",
+      longDescription:
+        "A Flutter app + GCP-backed platform for artisans: secure onboarding (Aadhaar / PAN / selfie KYC), product CRUD (up to 5 photos per product), auto-generated 15s reels from product images (Cloud Run + FFmpeg), and dashboards for artisans and admins. Primary datastore is Cloud Firestore (asia-south1) with media in a GCS bucket (gs://artisan-app-media, Mumbai). Backend tooling uses Docker and Cloud Run for video generation and background jobs.",
+      technologies: [
+        "Flutter",
+        "Firebase Auth",
+        "Cloud Firestore",
+        "Google Cloud Storage",
+        "Cloud Run (Python + FFmpeg)",
+        "Docker",
+        "Firebase Storage",
+        "GCP IAM / Service Accounts"
+      ],
+      category: "Marketplace / Creator Tools",
+      icon: Smartphone,
+      status: "In development (backend in Mumbai)",
+      features: [
+        "Artisan onboarding with KYC (Aadhaar, PAN, selfie) and admin review workflow",
+        "Profile editor: name, bio, profile photo, up to 5 shop photos, intro video",
+        "Products: add/edit/delete products, upload up to 5 product photos",
+        "Auto reels: Cloud Run FFmpeg job creates 15s cross-fade reels (reel.mp4) from up to 5 images",
+        "Reels and products exposed via Firestore collections (reels/{reelId}, products/{productId})",
+        "Admin KYC dashboard and kycSubmissions subcollection",
+        "Storage region handling (explicit bucket in Mumbai to avoid US default)",
+        "Uses Docker images for reproducible Cloud Run deployments"
+      ],
+      metrics: {
+        statusDetail: "Reel Generation Done"
+      },
+      links: {
+      github: "https://github.com/5tea1th/konstant"
+    }
     }
   ];
 
   const upcomingProjects = [
     {
       title: "RoboVITics Mobile Platform",
-      description: "Developing a comprehensive mobile platform for robotics club management and competition tracking.",
-      technologies: ["Flutter", "Firebase", "Real-time Database"],
-      status: "In Development"
+      description: "Currently in planning: a mobile-first platform to extend RoboWars features and community engagement with project tracking and mentorship support.",
+      technologies: ["Flutter", "Cloud", "Realtime Database"],
+      status: "Planning"
     },
     {
       title: "ML Model Deployment Tool",
@@ -53,100 +117,121 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Featured Project */}
+        {/* Featured / Completed Projects */}
         <div className="max-w-6xl mx-auto mb-16">
           {projects.map((project, index) => (
             <Card key={index} className="project-card overflow-hidden">
               <div className="grid lg:grid-cols-2 gap-8 p-8">
                 {/* Project Info */}
-                <div className="space-y-6">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-primary/10 p-2 rounded-lg">
-                      <project.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
-                      <Badge className="bg-accent/20 text-accent-foreground text-xs mt-1">
-                        {project.status}
-                      </Badge>
-                    </div>
-                  </div>
+<div className="space-y-6">
+  <div className="flex items-center gap-3">
+    <div className="bg-primary/10 p-2 rounded-lg">
+      <project.icon className="h-6 w-6 text-primary" />
+    </div>
+    <div>
+      <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
+      <Badge className="bg-accent/20 text-accent-foreground text-xs mt-1">
+        {project.status}
+      </Badge>
+    </div>
+  </div>
 
-                  <p className="text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
+  <p className="text-muted-foreground leading-relaxed">
+    {project.description}
+  </p>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {project.longDescription}
-                  </p>
+  {project.longDescription && (
+    <p className="text-sm text-muted-foreground leading-relaxed">
+      {project.longDescription}
+    </p>
+  )}
 
-                  {/* Key Features */}
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-3">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {project.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+  {/* Key Features */}
+  {project.features && (
+    <div>
+      <h4 className="font-semibold text-foreground mb-3">Key Features:</h4>
+      <ul className="space-y-2">
+        {project.features.map((feature, idx) => (
+          <li key={idx} className="flex items-center text-sm text-muted-foreground">
+            <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
 
-                  {/* Technologies */}
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-3">Technologies Used:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span key={tech} className="skill-tag">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+  {/* Technologies */}
+  <div>
+    <h4 className="font-semibold text-foreground mb-3">Technologies Used:</h4>
+    <div className="flex flex-wrap gap-2">
+      {project.technologies.map((tech) => (
+        <span key={tech} className="skill-tag">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
-                    <Button className="btn-tech" disabled>
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo (Coming Soon)
-                    </Button>
-                    <Button variant="outline" className="btn-outline-tech" disabled>
-                      <Github className="mr-2 h-4 w-4" />
-                      Source Code
-                    </Button>
-                  </div>
-                </div>
+  {/* Action Buttons */}
+  <div className="flex gap-3 pt-4">
+    {project.links?.playstore && (
+      <Button
+  className="btn-tech"
+  disabled={!project.links?.playstore}
+  asChild={!!project.links?.playstore} // only turn into <a> if link exists
+>
+  {project.links?.playstore ? (
+    <a href={project.links.playstore} target="_blank" rel="noopener noreferrer">
+      <ExternalLink className="mr-2 h-4 w-4" />
+      Play Store
+    </a>
+  ) : (
+    <span className="flex items-center">
+      <ExternalLink className="mr-2 h-4 w-4" />
+      Play Store
+    </span>
+  )}
+</Button>
+    )}
 
-                {/* Project Metrics & Visual */}
-                <div className="space-y-6">
-                  {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-primary">{project.metrics.accuracy}</div>
-                      <div className="text-xs text-muted-foreground">Accuracy</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-accent">{project.metrics.breeds}</div>
-                      <div className="text-xs text-muted-foreground">Cow Breeds</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-primary">2</div>
-                      <div className="text-xs text-muted-foreground">Platforms</div>
-                    </div>
-                  </div>
+    {project.links?.github && (
+      <Button asChild variant="outline" className="btn-outline-tech">
+        <a href={project.links.github} target="_blank" rel="noopener noreferrer">
+          <Github className="mr-2 h-4 w-4" />
+          GitHub
+        </a>
+      </Button>
+    )}
+  </div>
+</div> {/* ✅ Close space-y-6 properly here */}
 
-                  {/* Visual placeholder */}
-                  <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg p-8 text-center">
-                    <Brain className="h-16 w-16 mx-auto text-primary/60 mb-4" />
-                    <p className="text-sm text-muted-foreground">
-                      AI-Powered Detection Engine
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Custom TensorFlow Lite Model
-                    </p>
-                  </div>
-                </div>
+
+{/* Project Metrics & Visual */}
+{project.metrics && (
+  <div className="space-y-6">
+    <div className="grid grid-cols-3 gap-4">
+      {Object.entries(project.metrics).map(([key, value]) => (
+        <div key={key} className="text-center">
+          <div className="text-2xl font-bold text-primary">{value}</div>
+          <div className="text-xs text-muted-foreground">
+            {key.charAt(0).toUpperCase() + key.slice(1)}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg p-8 text-center">
+      <Brain className="h-16 w-16 mx-auto text-primary/60 mb-4" />
+      <p className="text-sm text-muted-foreground">AI-Powered / Cloud Sync</p>
+      <p className="text-xs text-muted-foreground mt-1">
+        {project.title === "Cowwnect"
+          ? "Custom TensorFlow Lite Model"
+          : "Cloud & Realtime Platform"}
+      </p>
+    </div>
+  </div>
+)}
               </div>
             </Card>
           ))}

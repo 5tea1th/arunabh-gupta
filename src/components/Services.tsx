@@ -116,9 +116,12 @@ const Services = () => {
           <h3 className="text-xl font-semibold mb-6 text-foreground">Technologies I Use</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              'Flutter', 'Dart', 'Firebase', 'REST APIs', 'SQLite', 
-              'Push Notifications', 'State Management', 'Material Design',
-              'Cupertino Design', 'TensorFlow Lite', 'Maps Integration'
+              'Flutter', 'Dart', 'Firebase', 'Firestore (NoSQL)', 'SQLite', 'OracleDB (SQL)',
+  'REST APIs', 'Push Notifications', 'State Management (Provider / Riverpod / BLoC)',
+  'Material Design', 'Cupertino Design', 'TensorFlow Lite', 'Maps Integration',
+  'Docker', 'Google Cloud Platform (GCP)', 'Amazon Web Services (AWS)',
+  'Cloud Storage', 'CI/CD Pipelines', 'Authentication (OAuth, Firebase Auth)',
+  'Realtime Database Features', 'App Performance Monitoring'
             ].map((tech) => (
               <span key={tech} className="skill-tag">
                 {tech}
